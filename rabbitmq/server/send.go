@@ -22,7 +22,7 @@ func main() {
 	q, err := ch.QueueDeclare("hello world", false, false, false, false, nil)
 
 	failOnError(err, "Failed to declare a queue")
-	body := "Hello CHAN!"
+	body := "Hello Rabbit!"
 
 	err = ch.Publish("", q.Name, false, false, amqp.Publishing{
 		ContentType: "text/plain",
